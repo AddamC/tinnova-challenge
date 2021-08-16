@@ -1,5 +1,5 @@
 import { AddIcon, DeleteIcon, EditIcon } from '@chakra-ui/icons';
-import { Box, Checkbox, Container, IconButton, Tab, TabList, TabPanel, TabPanels, Tabs, useDisclosure } from '@chakra-ui/react';
+import { Box, Checkbox, Container, IconButton, Input, Select, Tab, TabList, TabPanel, TabPanels, Tabs, useDisclosure } from '@chakra-ui/react';
 import { format, parseISO } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { GetStaticProps } from 'next';
@@ -52,6 +52,15 @@ export default function Home({ veiculosUltimaSemana, todosVeiculos }: HomeProps)
           <TabPanel>
             <section className={styles.ultimosVeiculos}>
               <Checkbox size="sm">Ordenar por década</Checkbox>
+              <Box d="flex">
+                <Select placeholder="..." width="40%" mr={2} onChange={()=> {}}>
+                  <option value="nome">Nome</option>
+                  <option value="marca">Marca</option>
+                  <option value="ano">Ano</option>
+                </Select>
+                <Input type="" placeholder="Buscar" onBlur={() => {}}/>
+              </Box>
+
               <Box m={4} mt={8}>
                 <ul>
                   {veiculosUltimaSemana.map((veiculo) => {
@@ -61,13 +70,14 @@ export default function Home({ veiculosUltimaSemana, todosVeiculos }: HomeProps)
                           <Link href={`/veiculos/${veiculo.id}`}>
                             <a>{veiculo.nome}</a>
                           </Link>
-
+                          
+                          <span>{veiculo.marca}</span><br/>
                           <span>{veiculo.created}</span>
                           <span style={{ display: veiculo.vendido ? "hidden" : "inline" }}>disponível</span>
 
                           <Box d="flex" justifyContent="center">
-                            <IconButton aria-label="Editar Veículo" icon={<EditIcon/>} variant="unstyled"/>
-                            <IconButton aria-label="Remover Veículo" icon={<DeleteIcon/>} variant="unstyled" color="red" onClick={() => handleDelete(veiculo)}/>
+                            <IconButton aria-label="Editar Veículo" icon={<EditIcon />} variant="unstyled" />
+                            <IconButton aria-label="Remover Veículo" icon={<DeleteIcon />} variant="unstyled" color="red" onClick={() => handleDelete(veiculo)} />
                           </Box>
                         </div>
                       </li>

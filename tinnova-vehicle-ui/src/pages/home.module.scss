@@ -54,12 +54,17 @@
                     text-overflow: ellipsis;
                 }
 
+                span .marca {
+                    display: block;
+                    font-weight: 500;
+                }
+
                 span {
                     display: inline-block;
                     margin-top: 0.5rem;
                     font-size: 0.875rem;
-
-                    &:nth-child(3) {
+                    
+                    &:nth-child(5) {
                         font-size: 0.875rem;
                         font-weight: 700;
                         color: var(--green-500);
