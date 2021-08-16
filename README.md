@@ -49,9 +49,11 @@ O Backend foi desenvolvido utilizando:
     Interface do desafio que consome dados da API de veículos
 </h4>
 
-Tela Inicial               |  Cadastro de veículo
-:-------------------------:|:-------------------------:
-![](.github/ui_Pic_1.png)  |  ![](.github/ui_Pic_2.png)
+<h4 align="center">
+    <br/>
+    <img width="50%" src=".github/ui_Pic_1.png" />
+    <img width="50%" src=".github/ui_Pic_2.png" />
+</h4>
 
 ### Detalhes do front
 
